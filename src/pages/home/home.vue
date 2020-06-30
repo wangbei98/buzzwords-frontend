@@ -138,7 +138,10 @@
 					data: {},
 					success: res => {
 						if(that.curFilterIndex == 0){
-							that.questions = res.data.data.questions.sort()
+							that.questions = res.data.data.questions.sort((a,b)=>{
+							if (a.word < b.word)return -1
+							else return 1
+						})
 						}else if(that.curFilterIndex == 1){
 							that.questions = res.data.data.questions
 							.filter(question => question.answers.length > 0).sort()
