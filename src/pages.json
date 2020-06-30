@@ -1,16 +1,119 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"enablePullDownRefresh": true
 			}
+		},
+		// #ifndef MP-WEIXIN
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"enablePullDownRefresh": true
+			}
+		},
+		// #endif
+		// #ifdef MP-WEIXIN
+		{
+			"path": "pages/detail/mp-detail",
+			"style": {
+				"enablePullDownRefresh": true
+			}
+		},
+		// #endif
+		// #ifndef MP-WEIXIN
+		{
+			"path": "pages/add/home",
+			"style": {}
+		},
+		{
+			"path": "pages/add/addAnswer",
+			"style": {}
+		},
+		{
+			"path": "pages/add/addQuestion",
+			"style": {}
+		},
+		{
+			"path": "pages/add/addQA",
+			"style": {}
+		},
+		// #endif
+		// #ifdef MP-WEIXIN
+		{
+			"path": "pages/translate/home",
+			"style": {}
+		},
+		// #endif
+		{
+			"path": "pages/user/home",
+			"style": {}
+		},
+		{
+			"path": "pages/user/about",
+			"style": {}
+		},
+		{
+			"path": "pages/user/colorui",
+			"style": {}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"transparentTitle": "always",
+			"allowsBounceVertical": "NO"
+		},
+		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarTitleText": "ColorUi for UniApp",
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "white"
+	},
+	"usingComponts": true,
+		"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+				"name": "表单", //模式名称
+				"path": "pages/component/form", //启动页面
+				"query": "" //启动参数
+			}
+		]
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"backgroundColor": "#d2dae2",
+		"color": "#8F8F94",
+		"selectedColor": "#12CBC4",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/tabbar/basics.png",
+				"selectedIconPath": "static/tabbar/basics_cur.png",
+				"text": "首页"
+			},
+			// #ifndef MP-WEIXIN
+			{
+				"pagePath": "pages/add/home",
+				"iconPath": "static/tabbar/add.png",
+				"selectedIconPath": "static/tabbar/add_cur.png"
+			},
+			// #endif
+			// #ifdef MP-WEIXIN
+			{
+				"pagePath": "pages/translate/home",
+				"iconPath": "static/tabbar/translate.png",
+				"selectedIconPath": "static/tabbar/translate_cur.png",
+				"text":"翻译"
+			},
+			// #endif
+			{
+				"pagePath": "pages/user/home",
+				"iconPath": "static/tabbar/about.png",
+				"selectedIconPath": "static/tabbar/about_cur.png",
+				"text": "关于"
+			}
+		]
 	}
+
 }
