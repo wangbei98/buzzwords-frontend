@@ -8,6 +8,9 @@
 
 ## 体验
 
+* 添加词条：[手机访问此链接](http://bytescloud.cn)
+
+
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1ggwahl5ndgj30nw0nwaex.jpg)
 
 ## Project setup
